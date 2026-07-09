@@ -1,0 +1,51 @@
+https://twm-section-library.nm.com/section-dictionary.htm
+
+https://twm-section-library.nm.com/?welcome=true
+
+
+SEO Best Practices
+
+This guide on linknet is useful for referencing SEO best practices: SEO Optimization Guide
+
+I pulled out some main points from the deck that could be helpful in ensuring your site ranks higher in search results.
+
+ 
+
+Location – Add mentions of your location throughout your content. (See a good example of this on page 7)
+Content Layout – The following are items that can make it easier for search engines to crawl your website (page 6)
+Keep paragraphs to about 2-3 sentences and arrange them logically, following their own topic
+Leverage different formatting options such as bullet points, numbered lists and change of font
+Focus your content on the items that have the biggest impact on your team, community, business, and markets. 
+Include information about who Lume Capital is (currently have this on Chris’s Who We Are page)
+Include personal and professional information (Outside of a who we are page, ensure each individual has a bio with personal and professional information)
+Clearly outline who your target markets are (currently have this on Chris’s Who We Serve page)
+Keywords – Research a list of keywords that define your business and brand that your target consumers are likely to enter into search engines (page 8)
+When adding keywords to your site, keep the location, frequency, and distance of the keywords in mind.
+Internal and External Links – Hyperlinking is a great way to increase traffic to your website (page 10)
+Internal Links – Any link from one page on your website to another page on your website. You can utilize call to action buttons for internal linking. (page 5)
+External Links – Links from your website to another website. Ex: links to websites for community organizations you work with
+Additional Tips
+
+Present critical information as text – Images, Videos, and PDFs aren’t readily consumed by LLMs during an AI search. If you utilize these content types, also ensure the language exists as editable text on the website.
+Seek Third Party Mentions on high-quality sites– Getting mentioned on other websites helps to validate your expertise as a source.
+General business directories and review sites
+Industry-specific business directories
+City government and Chamber of Commerce websites
+Local nonprofits, charities, and schools
+Sites of business partners
+Local news outlets and blogs
+Linking Google Reviews on the website
+
+At this time, the website platform does not have the capability to link google reviews, but as a strategic group you do have access to the opportunity to create a Google Business Profile.
+
+This is a tool that allows businesses to manage their online presence across Google Search and Google Maps, and can help promote website traffic to your site while supporting your firm’s website ranking in search results.
+
+See more information on Google Business Profiles here: Google Business Profiles
+
+Additionally, as an alternative, if you have compliance approved testimonials, this would be a great thing to add to your site to boost your team’s credibility.
+
+Google Ads
+
+I connected with compliance and they relayed that at this time, Google Ads are not an approved form of technology, as they have many interactive elements that may create additional compliance considerations around disclosures, supervision, record retention, truth-in-advertising, and user experience design that  have not have been solved for to-date.
+
+If you have questions on this, I suggest reaching out to the compliance team at ec-mmc@northwesternmutual.com for further discussion.
