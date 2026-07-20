@@ -1,4 +1,29 @@
-OneDrive_1_7-7-2026.zip
-*.zip
-.DS_Store
-Thumbs.db
+# === Lume Capital — deploy allowlist ===
+# Only the built page (index.html) and the assets it references are tracked/pushed.
+# All brand-source files (EPS/JPG/PDF/extra PNGs), content drafts, compliance docs,
+# working files, and build notes stay local and are never pushed.
+
+# 1) Ignore everything by default
+/*
+
+# 2) Repo essentials
+!.gitignore
+!index.html
+
+# 3) Root-level assets referenced by index.html
+!nwm-logo-horizontal-white.svg
+!CFP-logo.jpeg
+!MDRT-logo.jpeg
+!chris-moore-pic.jpg
+!lume-lifestyle.jpg
+!james-taylor-pic.jpg
+!vanessa-pic.jpg
+!zach-pic.jpg
+!connor-pic.jpg
+!sydney-pic.jpg
+!kevin-pic.jpg
+
+# 4) Keep only the one PNG referenced (inside PNG/)
+!PNG/
+PNG/*
+!PNG/2_LumeCapital_FullColor_Reverse_Horizontal.png
