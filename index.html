@@ -405,8 +405,8 @@
   }
   .q-text {
     position: relative; z-index: 1;
-    font-family: var(--sans-display); font-size: var(--text-h3);
-    line-height: var(--leading-snug); color: var(--navy); font-weight: 600; letter-spacing: -0.01em;
+    font-family: var(--sans-display); font-size: var(--text-h3); font-style: italic;
+    line-height: var(--leading-snug); color: var(--navy); font-weight: 500; letter-spacing: -0.01em;
   }
   .q-close { max-width: 760px; margin: var(--space-xl) auto 0; text-align: center; font-size: var(--text-accent); line-height: var(--leading-normal); color: var(--slate); }
   .q-close b { color: var(--gold-deep); font-weight: 600; }
@@ -518,7 +518,7 @@
     .proof-inner { align-items: flex-start; text-align: left; }
     .proof-items { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
     /* Team header + CTA stack instead of smooshing side by side */
-    .team-lead { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
+    .team-lead { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; justify-items: start; }
     .story-media .dial-badge { right: 14px; bottom: 14px; }
     section { padding: var(--space-xl) 0; }
   }
