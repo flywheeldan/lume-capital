@@ -280,7 +280,7 @@
   .proof-item::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
 
   /* ============================================================= STORY (Chris) */
-  .story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, var(--space-2xl)); align-items: center; }
+  .story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, var(--space-2xl)); align-items: start; }
   .story-media { position: relative; }
   .story-media img { width: 100%; height: 620px; object-fit: cover; object-position: center 20%; border-radius: 3px; filter: grayscale(100%) contrast(1.03); }
   .story-media .story-frame {
@@ -350,6 +350,14 @@
   .cap-card .cap-ico svg { width: 100%; height: 100%; }
   .cap-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
   .cap-card p { font-size: 0.94rem; }
+
+  /* ============================================================= LIFE QUESTIONS BAND */
+  .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+  .q-card { padding-top: var(--space-md); border-top: 2px solid var(--gold); }
+  .q-num { font-family: var(--sans-display); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; color: var(--gold-deep); }
+  .q-text { font-family: var(--sans-display); font-size: clamp(1.3rem, 1.9vw, 1.65rem); line-height: 1.2; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; margin-top: 0.6rem; }
+  .q-close { max-width: 760px; margin: var(--space-xl) auto 0; text-align: center; font-size: 1.15rem; line-height: 1.5; color: var(--slate); }
+  .q-close b { color: var(--gold-deep); font-weight: 600; }
 
   /* ============================================================= PHILOSOPHY (time not money) */
   .philo-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem,5vw,var(--space-2xl)); align-items: center; }
@@ -450,7 +458,7 @@
     .philo-media img { height: 340px; }
   }
   @media (max-width: 620px) {
-    .serve-grid, .cap-grid, .community-grid, .team-grid, .form-grid, .steps { grid-template-columns: 1fr; }
+    .serve-grid, .cap-grid, .community-grid, .team-grid, .form-grid, .steps, .q-grid { grid-template-columns: 1fr; }
     /* Hero trust line: stacked and centered */
     .hero-trust { flex-direction: column; align-items: center; text-align: center; gap: 0.55rem; }
     .hero-trust .dot { display: none; }
@@ -503,7 +511,7 @@
     </ul>
     <div class="nav-cta">
       <span class="nav-phone">614.857.4273</span>
-      <a href="#contact" class="btn btn-gold">Begin a Conversation</a>
+      <a href="#contact" class="btn btn-gold">Start a Conversation</a>
     </div>
     <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" id="hamburgerBtn">
       <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -519,7 +527,7 @@
     </ul>
     <div class="mobile-contact">
       <span class="nav-phone">614.857.4273</span>
-      <a href="#contact" class="btn btn-gold">Begin a Conversation</a>
+      <a href="#contact" class="btn btn-gold">Start a Conversation</a>
     </div>
   </div>
 </header>
@@ -534,9 +542,9 @@
       <div class="hero-copy">
         <span class="eyebrow on-ink">Private Wealth Management &middot; Columbus, Ohio</span>
         <h1>The point of the wealth was never the wealth.<br><span class="glow">It was the time.</span></h1>
-        <p class="lead">Private wealth management for physicians, executives, business owners, and families with complex financial lives. We carry the complexity, so you can spend your time where it matters.</p>
+        <p class="lead">Private wealth management for physicians, executives, business owners, and families across Central Ohio. Most people don&rsquo;t come to us with a money problem &mdash; they come with a life question that money touches. We help you answer it.</p>
         <div class="hero-cta-row">
-          <a href="#contact" class="btn btn-gold">Begin a Conversation
+          <a href="#contact" class="btn btn-gold">Start a Conversation
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="#story" class="btn btn-outline">Read Chris&rsquo;s Story</a>
@@ -580,11 +588,13 @@
         </div>
         <div class="story-copy reveal">
           <span class="eyebrow">Our Story</span>
-          <h2>A different idea about what wealth is&nbsp;for.</h2>
-          <p style="margin-top:var(--space-md);">Chris Moore came out of school in 2009 aiming for investment banking &mdash; and walked straight into the worst financial crisis in a generation. Wall Street wasn&rsquo;t hiring. Financial planning was, and what he found there reframed the whole ambition.</p>
-          <p style="margin-top:var(--space-sm);">Working with real families, he noticed the people who looked most successful on paper often shared the same quiet frustration. They had built the assets. What they were short on was time &mdash; and, with it, the freedom to actually enjoy any of it.</p>
-          <blockquote>&ldquo;My clients don&rsquo;t want more money for its own sake. They want their time back. That&rsquo;s the whole job.&rdquo;</blockquote>
-          <p>Fifteen years later, that conviction is the practice. Chris leads a seven-person team serving physicians, executives, and families across Central Ohio &mdash; recognized by Forbes among Ohio&rsquo;s Top Next-Gen Wealth Advisors and Best-in-State Financial Security Professionals.</p>
+          <h2>Why I do what I&nbsp;do.</h2>
+          <p style="margin-top:var(--space-md);">When people ask why I became a financial advisor, I don&rsquo;t think about markets or investments. I think about my parents in the bleachers at my soccer games.</p>
+          <p style="margin-top:var(--space-sm);">My dad was the first in his family to go to college &mdash; he finished dental school at 25 and built his own practice from scratch. My mom had the harder job, raising my siblings and me. They didn&rsquo;t talk much about money. Instead, they showed me what it was <em>for</em>: being at the games, taking the trips, making being together the priority.</p>
+          <p style="margin-top:var(--space-sm);">I started college pre-med, switched to finance, and set my sights on investment banking &mdash; then graduated in 2009, straight into the financial crisis, and that path disappeared overnight. My mom, who worked for a financial advisor, encouraged me to look at planning. The more I learned, the more I realized I&rsquo;d found exactly what I wanted: a way to solve complex problems while helping people build the lives they truly want.</p>
+          <p style="margin-top:var(--space-sm);">Seventeen years and hundreds of families later, I&rsquo;ve learned that people rarely come to me with a money problem. They come with a life question that money touches.</p>
+          <blockquote>&ldquo;Wealth matters &mdash; but it&rsquo;s not the goal. The goal is using it to build a meaningful life, be there for the people you love, and leave things better than you found them.&rdquo;</blockquote>
+          <p>That&rsquo;s why I do what I do.</p>
           <div class="sig">
             <div class="name">Christopher M. Moore</div>
             <div class="role">Founder &amp; Wealth Management Advisor</div>
@@ -592,6 +602,31 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== LIFE QUESTIONS -->
+  <section id="questions" style="background:var(--cream);">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">The Questions That Matter</span>
+        <h2>The hardest questions aren&rsquo;t about money. They&rsquo;re about your&nbsp;life.</h2>
+      </div>
+      <div class="q-grid reveal">
+        <div class="q-card">
+          <span class="q-num">01</span>
+          <p class="q-text">Can I retire &mdash; and stay retired &mdash; with confidence?</p>
+        </div>
+        <div class="q-card">
+          <span class="q-num">02</span>
+          <p class="q-text">Will my family be okay if something unexpected happens?</p>
+        </div>
+        <div class="q-card">
+          <span class="q-num">03</span>
+          <p class="q-text">Am I making the most of everything I&rsquo;ve worked so hard to build?</p>
+        </div>
+      </div>
+      <p class="q-close reveal">Those aren&rsquo;t investment questions. They&rsquo;re life questions &mdash; <b>and they&rsquo;re the ones we help you answer.</b></p>
     </div>
   </section>
 
@@ -655,7 +690,7 @@
       <div class="section-head center reveal">
         <span class="eyebrow on-ink">Our Process</span>
         <h2>The Lume Framework</h2>
-        <p class="lead">A disciplined, repeatable method that turns a complex financial life into a plan you can actually read &mdash; and a team that keeps it current as your life changes.</p>
+        <p class="lead">It starts with your life questions, never a product &mdash; then turns a complex financial life into a plan you can actually read, and a team that keeps it current as your life changes.</p>
       </div>
       <div class="steps">
         <div class="step reveal">
@@ -664,7 +699,7 @@
             <span class="step-num">01</span>
           </div>
           <h3>Discovery</h3>
-          <p>We start with your calendar and your values, not a product. What is the money actually for?</p>
+          <p>We start with your life questions and your values &mdash; never a product. What is the money actually for?</p>
         </div>
         <div class="step reveal">
           <div class="step-ring">
@@ -759,7 +794,7 @@
         <article class="cap-card reveal" style="background:var(--ink);border-color:var(--ink);border-top-color:var(--gold);display:flex;flex-direction:column;justify-content:center;">
           <h3 style="color:#fff;">Not sure where to start?</h3>
           <p style="color:rgba(255,255,255,0.82);margin-bottom:var(--space-md);">Most clients don&rsquo;t arrive with a tidy question. A conversation is how we find it.</p>
-          <a href="#contact" class="textlink" style="color:var(--gold-soft);border-color:var(--gold);">Begin a conversation
+          <a href="#contact" class="textlink" style="color:var(--gold-soft);border-color:var(--gold);">Start a conversation
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </article>
@@ -773,8 +808,8 @@
       <div class="reveal">
         <span class="eyebrow on-ink">Our Philosophy</span>
         <h2 style="color:#fff;">Time, not money, is the scarce&nbsp;resource.</h2>
-        <p class="lead">Most plans begin and end with a number. We begin with your calendar &mdash; with the hours you want back for family, for health, and for the parts of your work and life you got into it for. Everything we build is in service of protecting them.</p>
-        <p class="lead philo-thesis">Our name is the light on a watch dial, read in the dark &mdash; the clarity to see exactly when it matters most.</p>
+        <p class="lead">Wealth matters &mdash; but it&rsquo;s not the goal. The real goal is using that tool to build a meaningful life, be there for the people you love, and leave things better than you found them.</p>
+        <p class="lead philo-thesis">Lume is the luminescent paint that makes a watch dial readable in the dark &mdash; from the Latin <em>l&uacute;men</em>, the light of life. It&rsquo;s what a good plan gives you: the ability to see clearly, exactly when it matters most.</p>
       </div>
       <div class="philo-media reveal">
         <img src="lume-lifestyle.jpg" alt="A family enjoying unstructured time together outdoors in warm afternoon light">
@@ -867,9 +902,9 @@
   <section id="contact" class="ink-section">
     <div class="container contact-grid">
       <div class="contact-copy reveal">
-        <span class="eyebrow on-ink">Begin a Conversation</span>
-        <h2 style="color:#fff;">Let&rsquo;s talk about getting your time back.</h2>
-        <p class="lead">A short, no-pressure conversation is the first step. Tell us a little about where you are, and a member of our team will follow up within one business day.</p>
+        <span class="eyebrow on-ink">Start a Conversation</span>
+        <h2 style="color:#fff;">Let&rsquo;s talk about your life questions &mdash; not just your money.</h2>
+        <p class="lead">Whether a friend or advisor pointed you our way or you found us on your own, the first step is simply a conversation. Tell us a little about where you are, and Chris or a member of our team will follow up within one business day.</p>
         <div class="contact-assure">
           <div class="assure-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -943,7 +978,7 @@
         <ul>
           <li>614.857.4273</li>
           <li>Upper Arlington, Columbus OH</li>
-          <li><a href="#contact">Begin a conversation</a></li>
+          <li><a href="#contact">Start a conversation</a></li>
         </ul>
       </div>
       <div class="footer-col">
