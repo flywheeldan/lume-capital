@@ -1,0 +1,228 @@
+/* ============================================================================
+   LUME CAPITAL — DESIGN SYSTEM / DESIGN TOKENS
+   Source of truth for the full WordPress build (TailPress + Tailwind CSS v4).
+
+   This file is a reference. The concept page (index.html) currently inlines the
+   same tokens; when the site moves to TailPress, this becomes the single source
+   and index.html's <style> block is deleted in favour of it.
+   ----------------------------------------------------------------------------
+   HOW TO USE (TailPress / Tailwind v4)
+     1. In the theme's main stylesheet:
+            @import "tailwindcss";
+            @import "lume-design-system.css";
+     2. The @theme block registers every token, so Tailwind auto-generates
+        matching utilities:
+            colours ..... bg-navy  text-gold  border-line  bg-ink
+            fonts ....... font-display  font-body  font-num
+            type ........ text-hero text-h1 text-h2 text-h3 text-h4
+                          text-accent text-body text-small
+            leading ..... leading-tight leading-snug leading-normal leading-relaxed
+            tracking .... tracking-tight tracking-wide tracking-wider
+            spacing ..... p-md  gap-lg  mt-2xl  (etc.)
+            radius ...... rounded-btn  rounded-card
+     3. RESPONSIVE TYPE: heading sizes are mobile-first in @theme and step up at
+        the `md` breakpoint (768px) via the custom-property override in @layer
+        base. Because Tailwind v4 utilities resolve to these same CSS variables,
+        BOTH the utilities (text-h2) and raw var(--text-h2) respond automatically
+        — no per-element md: variants needed. Body / accent / small are constant
+        by design (16 / 18 / 14 are readability floors).
+   ----------------------------------------------------------------------------
+   TYPE SCALE (px)            mobile      desktop (≥768)
+     Hero H1 (display)         40    →      76      (fluid clamp)
+     H1                        32    →      40
+     H2  / display numerals    24    →      30
+     H3  / questions           20    →      24
+     H4  / names               18    →      20
+     Accent / lead / quote     18            18
+     Body / inputs             16            16
+     Small / labels            14            14
+
+   FONTS
+     Display : Akzidenz-Grotesk  (licensed — Berthold/Adobe Fonts; ships as a
+               licensed webfont in production, Helvetica/Arial fallback)
+     Body    : Source Sans 3     (Google Fonts)
+     Numerals: Fraunces          (Google Fonts — numeral accent only)
+
+   LINE-HEIGHTS   tight 1.1 · snug 1.3 · normal 1.5 · relaxed 1.6
+   ============================================================================ */
+
+@theme {
+  /* ---- Colours ----------------------------------------------------------- */
+  --color-ink:          #0A1622;   /* near-black navy — hero & dark sections   */
+  --color-ink-2:        #0E2438;   /* raised panels on ink                     */
+  --color-navy:         #0E497B;   /* primary anchor / headlines on light      */
+  --color-navy-deep:    #0A3860;   /* hover / pressed navy                     */
+  --color-navy-tint:    #E9F0F7;   /* navy wash (active toggles)               */
+  --color-gold:         #F5A623;   /* luminescent accent, dials, button fills  */
+  --color-gold-soft:    #FBC66B;   /* gold text on dark ink                    */
+  --color-gold-deep:    #8A5E12;   /* AA-safe gold for small text on light     */
+  --color-paper:        #FAF7F0;   /* warm bone page background                */
+  --color-paper-2:      #F2EDE1;   /* alternate section background             */
+  --color-cream:        #F4F2DC;   /* warm feature-band background             */
+  --color-surface:      #FFFFFF;   /* cards / panels                          */
+  --color-ink-text:     #16232E;   /* body text on light                      */
+  --color-slate:        #45525C;   /* secondary text                          */
+  --color-slate-muted:  #5C6870;   /* muted text (AA on paper)                */
+  --color-line:         #E4DED0;   /* warm hairline / borders                 */
+  --color-line-cool:    #DCE3E8;   /* cool hairline (forms)                   */
+  --color-footer:       #07101A;   /* footer ground                           */
+  --color-footer-text:  #A9B6C0;   /* footer body / links                     */
+  --color-footer-muted: #7E8C97;   /* footer legal / meta (AA on footer)      */
+  --color-success:      #16A34A;
+  --color-error:        #DC2626;
+
+  /* Semantic glow (soft gold, for shadows/auras on dark) */
+  --color-glow:         rgba(245, 166, 35, 0.55);
+
+  /* ---- Fonts ------------------------------------------------------------- */
+  --font-display: 'Akzidenz-Grotesk', 'Akzidenz-Grotesk Pro', 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-num:     'Fraunces', Georgia, 'Times New Roman', serif;
+
+  /* ---- Type scale (mobile-first values; desktop step-up in @layer base) --- */
+  --text-hero:              clamp(2.5rem, 6vw, 4.75rem); /* 40 → 76, fluid */
+  --text-hero--line-height: 1.05;
+  --text-h1:                2rem;      /* 32 → 40 */
+  --text-h1--line-height:   1.1;
+  --text-h2:                1.5rem;    /* 24 → 30 */
+  --text-h2--line-height:   1.1;
+  --text-h3:                1.25rem;   /* 20 → 24 */
+  --text-h3--line-height:   1.3;
+  --text-h4:                1.125rem;  /* 18 → 20 */
+  --text-h4--line-height:   1.3;
+  --text-accent:            1.125rem;  /* 18 (constant) */
+  --text-accent--line-height: 1.5;
+  --text-body:              1rem;      /* 16 (constant) */
+  --text-body--line-height: 1.6;
+  --text-small:             0.875rem;  /* 14 (constant) */
+  --text-small--line-height: 1.5;
+
+  /* ---- Line-heights (standalone) ----------------------------------------- */
+  --leading-tight:   1.1;    /* h1 / h2 / display numerals */
+  --leading-snug:    1.3;    /* h3 / h4 / block quotes     */
+  --leading-normal:  1.5;    /* leads / accents            */
+  --leading-relaxed: 1.6;    /* body / long-form           */
+
+  /* ---- Letter-spacing ---------------------------------------------------- */
+  --tracking-tight:  -0.02em;   /* large headings   */
+  --tracking-normal: 0;
+  --tracking-wide:   0.08em;    /* small caps labels */
+  --tracking-wider:  0.22em;    /* eyebrows          */
+
+  /* ---- Spacing ----------------------------------------------------------- */
+  --spacing-xs:  0.5rem;
+  --spacing-sm:  1rem;
+  --spacing-md:  1.5rem;
+  --spacing-lg:  2.5rem;
+  --spacing-xl:  4rem;
+  --spacing-2xl: 6.5rem;
+
+  /* ---- Radius ------------------------------------------------------------ */
+  --radius-btn:  2px;
+  --radius-card: 4px;
+
+  /* ---- Layout / breakpoints ---------------------------------------------- */
+  --breakpoint-md:  768px;    /* type + layout step-up */
+  --container-site: 1200px;
+}
+
+/* ============================================================================
+   BASE LAYER — responsive type step-up + element defaults
+   ============================================================================ */
+@layer base {
+
+  /* Desktop heading step-up. Utilities (text-h2) and var(--text-h2) both follow. */
+  @media (min-width: 768px) {
+    :root {
+      --text-h1: 2.5rem;   /* 40 */
+      --text-h2: 1.875rem; /* 30 */
+      --text-h3: 1.5rem;   /* 24 */
+      --text-h4: 1.25rem;  /* 20 */
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-relaxed);
+    color: var(--color-ink-text);
+    background: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+  }
+  h1 { font-size: var(--text-h1); letter-spacing: var(--tracking-tight); }
+  h2 { font-size: var(--text-h2); letter-spacing: var(--tracking-tight); }
+  h3 { font-size: var(--text-h3); font-weight: 600; line-height: var(--leading-snug); letter-spacing: -0.015em; }
+  h4 { font-size: var(--text-h4); font-weight: 600; line-height: var(--leading-snug); letter-spacing: -0.01em; }
+  h5 {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-navy);
+  }
+
+  p { font-size: var(--text-body); color: var(--color-slate); }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* Accent / editorial helpers */
+  .lead {
+    font-size: var(--text-accent);
+    line-height: var(--leading-normal);
+    color: var(--color-slate);
+    font-weight: 400;
+  }
+  blockquote {
+    font-family: var(--font-display);
+    font-size: var(--text-accent);
+    line-height: var(--leading-snug);
+    font-style: italic;
+    color: var(--color-navy);
+    border-left: 3px solid var(--color-gold);
+    padding-left: var(--spacing-md);
+  }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-gold-deep);
+  }
+  /* On dark ("ink") sections, gold text switches to the soft tint for contrast. */
+  .on-ink .eyebrow, .eyebrow.on-ink { color: var(--color-gold-soft); }
+}
+
+/* ============================================================================
+   TAILWIND v3 EQUIVALENT (reference only — if the build uses v3, not v4)
+   Put the values above into tailwind.config.js instead:
+
+   theme: {
+     extend: {
+       colors: { ink:'#0A1622', navy:'#0E497B', gold:'#F5A623', paper:'#FAF7F0', ... },
+       fontFamily: { display:['Akzidenz-Grotesk',...], body:['Source Sans 3',...], num:['Fraunces',...] },
+       fontSize: {
+         small:['0.875rem',{lineHeight:'1.5'}],
+         body:['1rem',{lineHeight:'1.6'}],
+         accent:['1.125rem',{lineHeight:'1.5'}],
+         h4:['1.125rem',{lineHeight:'1.3'}],   // md:text-h4 = 1.25rem
+         h3:['1.25rem',{lineHeight:'1.3'}],    // md:text-h3 = 1.5rem
+         h2:['1.5rem',{lineHeight:'1.1'}],     // md:text-h2 = 1.875rem
+         h1:['2rem',{lineHeight:'1.1'}],       // md:text-h1 = 2.5rem
+       },
+     },
+   }
+   In v3 the responsive step-up is done with utility variants in markup
+   (e.g. class="text-h2 md:text-h2-lg") rather than variable overrides.
+   ============================================================================ */

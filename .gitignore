@@ -9,6 +9,8 @@
 # 2) Repo essentials
 !.gitignore
 !index.html
+# design-token reference for the full TailPress/Tailwind build
+!lume-design-system.css
 
 # 3) Root-level assets referenced by index.html
 !nwm-logo-horizontal-white.svg
